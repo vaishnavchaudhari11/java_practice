@@ -351,6 +351,11 @@ public class practice {
 		System.out.println(result);
 	}
 	
+	public static void helloworld() {
+		
+		System.out.println("Hello World");
+	}
+	
 	
 	
 	
@@ -382,7 +387,8 @@ public class practice {
 		
 //		duplicatearr();
 //		sortarray();
-		duplicaterem("hello");
+//		duplicaterem("hello");
+		helloworld();
 	}
 
 }
