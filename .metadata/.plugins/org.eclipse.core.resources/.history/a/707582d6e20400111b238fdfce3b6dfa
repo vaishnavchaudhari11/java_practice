@@ -1,0 +1,16 @@
+
+public class PracticeAll {
+	
+	
+	static String result = "";
+	public static void stringreverse(String str) {
+		
+		for(int i = str.length()-1;i>=0;i--) {
+			
+			result += str.charAt(i);
+		}
+		System.out.println(result);
+		
+	}
+
+}

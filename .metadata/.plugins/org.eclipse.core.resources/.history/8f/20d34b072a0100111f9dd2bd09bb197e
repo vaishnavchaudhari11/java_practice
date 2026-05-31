@@ -1,0 +1,9 @@
+
+public class FirstNonRepetatingcharacter {
+	
+	public String firstnonrepeat(String str) {
+		
+		return "";
+	}
+
+}

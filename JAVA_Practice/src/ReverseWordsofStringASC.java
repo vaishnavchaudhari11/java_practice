@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class ReverseWordsofStringASC {
+	
+	public static void reverseWrodsofString(String str) {
+		
+		String[] arr = str.split(" ");
+		
+		for(String word : arr) {
+			String result = new StringBuilder(word).reverse().toString();
+			System.out.print(result + " ");
+		}
+	}
+	
+	
+	public static void reversewordsofStringLOOP(String str) {
+		
+		String[] arr = str.split(" ");
+		String FinalResult = "";
+		for(String word : arr) {
+			
+			String result = "";
+			for(int i =word.length()-1;i>=0;i--) {
+				result += word.charAt(i);
+			}
+			
+			FinalResult += result + " ";
+		}
+		
+		System.out.print("Final Result :"+FinalResult);
+	}
+
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter String");
+		String str = sc.nextLine();
+		reverseWrodsofString(str);
+		reversewordsofStringLOOP(str);
+	}
+}

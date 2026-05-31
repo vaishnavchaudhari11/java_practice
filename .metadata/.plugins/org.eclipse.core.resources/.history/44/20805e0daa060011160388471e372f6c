@@ -1,0 +1,13 @@
+
+public class ReverseWordsofStringASC {
+	
+	public static void reverseWrodsofString(String str) {
+		
+		String[] arr = str.split(" ");
+		
+		for(String word : arr) {
+			String result = new StringBuilder(word).reverse().toString();
+		}
+	}
+
+}

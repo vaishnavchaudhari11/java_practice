@@ -1,0 +1,106 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class practice {
+	
+	//programming
+	
+	
+	public static void eachcharacteroccurence(String str) {
+		
+		
+		for(int i=0;i<str.length();i++) {
+			
+			boolean already = false;
+			for(int k=0;k<i;k++) {
+				
+				if(str.charAt(i) == str.charAt(k)) {
+					already = true;
+					break;
+				}
+			}
+			
+			int count =0;
+			if(already == false) {
+				
+			
+			for(int j=0;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j)) {
+					count++;
+				}
+			}
+		
+			
+			System.out.println("character :"+str.charAt(i) +" - "+count);
+			}
+		}
+		
+	}
+	
+	
+	public static void hashmapcharacteroccurence(String str) {
+		
+		HashMap<Character, Integer> map = new HashMap<>();
+		
+		for(int i =0;i<str.length();i++) {
+			
+			char ch = str.charAt(i);
+			map.put(ch, map.getOrDefault(ch, 0)+1);
+		}
+		
+		for(char ch : map.keySet()) {
+			System.out.println(ch + "-"+map.get(ch));
+		}
+	}
+	
+	
+	
+	public static String removeduplicatecharacter(String str) {
+		
+		String result ="";
+		for(int i=0;i<str.length();i++) {
+			
+			
+			
+			int count = 0;
+			for(int j=i+1;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j) && i<=j) {
+					count++;
+					break;
+				}
+			}
+			
+			if(count == 0) {
+				result += str.charAt(i);
+			}
+		}
+		return result;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter String");
+		String str = sc.nextLine();
+		eachcharacteroccurence(str);
+		hashmapcharacteroccurence(str);
+		
+		String removwe= removeduplicatecharacter(str);
+		System.out.println(removwe);
+		//eachcharacteroccurencehashmap(str);
+//		String result = EachCharacterOccurance(str);
+//		System.out.println(result);
+	}
+
+}

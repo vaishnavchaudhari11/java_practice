@@ -1,0 +1,44 @@
+
+public class palindromeWordsfromSentence {
+	
+	
+	
+	public static void palindromewordsfromsentence(String str) {
+		
+		String[] arr = str.split(" ");
+		
+		int flag = 0;
+		
+		for(String arr1 : arr) {
+			
+			int j = arr1.length() -1;
+			
+			for(int i =0;i<arr1.length()/2;i++) {
+				
+				if(str.charAt(i) == str.charAt(j)) {
+					
+					flag = 1 ;
+				}
+				else {
+					flag = 0;
+				}
+				j--;
+			}
+			
+			if(flag == 1) {
+				
+				System.out.println(arr1);
+			}
+			
+			
+			
+		}
+ 	}                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+	                                                                                                                                                                                                                                               
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		palindromewordsfromsentence("Madam and Arora went to market");
+	}
+
+}

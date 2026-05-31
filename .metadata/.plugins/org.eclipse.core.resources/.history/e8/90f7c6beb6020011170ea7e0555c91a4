@@ -1,0 +1,15 @@
+
+public class removegivencharacter {
+	
+	public static void removegivenchar(String str,char c) {
+		
+		String result ="";
+		for(int i=0;i<str.length();i++) {
+			
+			if(str.charAt(i) != c) {
+				
+			}
+		}
+	}
+
+}

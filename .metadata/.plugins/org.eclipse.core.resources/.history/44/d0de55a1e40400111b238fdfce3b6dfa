@@ -1,0 +1,109 @@
+import java.util.Scanner;
+
+public class PracticeAll {
+	
+	
+	 
+	public static void stringreverse(String str) {
+		
+		String result = "";
+		for(int i = str.length()-1;i>=0;i--) {
+			
+			result += str.charAt(i);
+		}
+		System.out.println(result);
+		
+	}
+	
+	
+	public static void firstnonrepeat(String str) {
+		
+		for(int i =0;i<str.length();i++) {
+			
+			int count = 0;
+			for(int j =i+1;j<str.length();j++) {
+				
+				if(str.charAt(i)!=' ') {
+				if(str.charAt(i) == str.charAt(j)) {
+					
+					count++;
+					break;
+				}
+				}
+			}
+			
+			if(count == 0) {
+				System.out.println("First non repeat ::"+str.charAt(i));
+				break;
+			}
+		}
+	}
+	
+	
+	
+	public static void lastnonrepat(String str) {
+		
+		for(int i =str.length()-1;i>=0;i--) {
+			
+			int count = 0;
+			for(int j = 0 ;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j) && i!=j) {
+					
+					count++;
+					break;
+				}
+			}
+			
+			if(count == 0) {
+				System.out.println("last non repeat :"+str.charAt(i));
+				break;
+			}
+		}
+	}
+	
+	
+	
+	public static void removeduplicate(String str) {
+		
+		for(int i =0;i<str.length();i++) {
+			
+			int count = 0;
+			String result = "";
+			for(int j=i+1;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j)) {
+					
+					count++;
+					break;
+				}
+			}
+			
+			if(count == 0) {
+				result += str.charAt(i);
+			}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		
+		//stringreverse(str);
+		
+		firstnonrepeat(str);
+		
+		lastnonrepat(str);
+	}
+	
+	
+
+}

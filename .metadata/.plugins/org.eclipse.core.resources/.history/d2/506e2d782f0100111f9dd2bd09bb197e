@@ -1,0 +1,16 @@
+
+public class Removeduplicatecharacter {
+	
+	public static String removeduplicatecharacter(String str) {
+		
+		
+		
+		
+		
+		
+		
+		
+		return "";
+	}
+
+}

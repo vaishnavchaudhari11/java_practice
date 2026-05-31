@@ -1,0 +1,249 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class practice {
+	
+	//programming
+	
+	
+	public static void eachcharacteroccurence(String str) {
+		
+		
+		for(int i=0;i<str.length();i++) {
+			
+			boolean already = false;
+			for(int k=0;k<i;k++) {
+				
+				if(str.charAt(i) == str.charAt(k)) {
+					already = true;
+					break;
+				}
+			}
+			
+			int count =0;
+			if(already == false) {
+				
+			
+			for(int j=0;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j)) {
+					count++;
+				}
+			}
+		
+			
+			System.out.println("character :"+str.charAt(i) +" - "+count);
+			}
+		}
+		
+	}
+	
+	
+	public static void hashmapcharacteroccurence(String str) {
+		
+		HashMap<Character, Integer> map = new HashMap<>();
+		
+		for(int i =0;i<str.length();i++) {
+			
+			char ch = str.charAt(i);
+			map.put(ch, map.getOrDefault(ch, 0)+1);
+		}
+		
+		for(char ch : map.keySet()) {
+			System.out.println(ch + "-"+map.get(ch));
+		}
+	}
+	
+	
+	
+	public static String removeduplicatecharacter(String str) {
+		
+		String result ="";
+		for(int i=0;i<str.length();i++) {
+			
+			
+			
+			int count = 0;
+			for(int j=i+1;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j) && i<=j) {
+					count++;
+					break;
+				}
+			}
+			
+			if(count == 0) {
+				result += str.charAt(i);
+			}
+		}
+		return result;
+	}
+	
+	
+	public static void sortarrayinascending(int[] arr ) {
+		
+		for(int i=0;i<arr.length;i++) {
+			for(int j=i+1;j<arr.length;j++) {
+				
+				if(arr[i] > arr[j]) {
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+		
+		for(int a : arr) {
+			System.out.println(a);
+		}
+	}
+	
+	
+	public static void removeduplicatechar(String str) {
+		
+		
+		String result ="";
+		
+		for(int i =0;i<str.length();i++) {
+			
+			int count =0;
+			
+			for(int j=i+1;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j)) {
+					
+					count++;
+					break;
+					
+				}
+				
+				
+			}
+			
+			
+			if(count ==0) {
+				result += str.charAt(i);
+				
+			}
+		}
+		
+		System.out.println("Result : "+result);
+	}
+	
+	
+	
+	public static void characteroccurence(String str) {
+		
+		for(int  i =0;i<str.length();i++) {
+			
+			int count = 1;
+			boolean repeated = false;
+			for(int k=0;k<i;k++) {
+				
+				if(str.charAt(i) == str.charAt(k)) {
+					
+					repeated = true;
+					break;
+				}
+			}
+			
+			
+			if(repeated == false) {
+				for(int  j =i+1;j<str.length();j++) {
+					
+					if(str.charAt(i) == str.charAt(j)) {
+						count++;
+					}
+				}
+				System.out.println("char :"+str.charAt(i) + " -"+count);
+			}
+			
+			
+		}
+		
+		
+		
+	}
+	
+	
+	public static void repeatingchar(String str) {
+		
+		for(int  i =0;i<str.length();i++) {
+			
+			int count =0;
+			for(int j=i+1;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j)) {
+					
+					count ++;
+//					System.out.println(str.charAt(i));
+//					break;
+				}
+			}
+			
+			if(count > 0) {
+				System.out.println(str.charAt(i));
+			}
+		}
+	}
+	
+	
+	
+	public static void maxoccuringelement(String str) {
+		
+		int count = 1;
+		int max = 0;
+		char result = ' ';
+		for(int i=0;i<str.length();i++) {
+			
+			for(int j=i+1;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j)) {
+					
+					count++;
+					
+				}
+			}
+		
+		
+		
+		
+		
+		if(max < count) {
+			max = count;
+			result = str.charAt(i);
+		}
+		}
+	}
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+//		Scanner sc = new Scanner(System.in);
+//		
+//		System.out.println("Enter String");
+//		String str = sc.nextLine();
+//		eachcharacteroccurence(str);
+//		hashmapcharacteroccurence(str);
+//		
+//		String removwe= removeduplicatecharacter(str);
+//		System.out.println(removwe);
+		
+//		int[] arr = {3,1,6,4,8};
+//		sortarrayinascending(arr);
+		//eachcharacteroccurencehashmap(str);
+//		String result = EachCharacterOccurance(str);
+//		System.out.println(result);
+		
+		
+//		removeduplicatechar("programming");
+//		characteroccurence("programming");
+		repeatingchar("programming");
+		maxoccuringelement("aaaabbbccd");
+	}
+
+}

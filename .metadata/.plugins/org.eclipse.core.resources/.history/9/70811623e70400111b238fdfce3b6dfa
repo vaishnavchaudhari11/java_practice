@@ -1,0 +1,215 @@
+import java.util.Scanner;
+
+public class PracticeAll {
+	
+	
+	 
+	public static void stringreverse(String str) {
+		
+		String result = "";
+		for(int i = str.length()-1;i>=0;i--) {
+			
+			result += str.charAt(i);
+		}
+		System.out.println(result);
+		
+	}
+	
+	
+	public static void firstnonrepeat(String str) {
+		
+		for(int i =0;i<str.length();i++) {
+			
+			int count = 0;
+			for(int j =i+1;j<str.length();j++) {
+				
+				if(str.charAt(i)!=' ') {
+				if(str.charAt(i) == str.charAt(j)) {
+					
+					count++;
+					break;
+				}
+				}
+			}
+			
+			if(count == 0) {
+				System.out.println("First non repeat ::"+str.charAt(i));
+				break;
+			}
+		}
+	}
+	
+	
+	
+	public static void lastnonrepat(String str) {
+		
+		for(int i =str.length()-1;i>=0;i--) {
+			
+			int count = 0;
+			for(int j = 0 ;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j) && i!=j) {
+					
+					count++;
+					break;
+				}
+			}
+			
+			if(count == 0) {
+				System.out.println("last non repeat :"+str.charAt(i));
+				break;
+			}
+		}
+	}
+	
+	
+	
+	public static void removeduplicate(String str) {
+		
+		String result = "";
+		
+		for(int i =0;i<str.length();i++) {
+			
+			int count = 0;
+			
+			for(int j=i+1;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j)) {
+					
+					count++;
+					break;
+				}
+			}
+			
+			if(count == 0) {
+				result += str.charAt(i);
+				
+			}
+		}
+		
+		System.out.println("Remove duplicate :: "+result);
+	}
+	
+	
+	public static void eachcharoccur(String str) {
+		
+		for(int i=0;i<str.length();i++) {
+			
+			int count =1;
+			boolean repeated = false;
+			for(int k =0;k<i;k++) {
+				
+				if(str.charAt(i) == str.charAt(k)) {
+					repeated = true;
+					break;
+				}
+			}
+			
+			
+			if(repeated == false) {
+				for(int j = i+1;j<str.length();j++) {
+					
+					if(str.charAt(i) == str.charAt(j)) {
+						count++;
+					}
+				}
+				
+				System.out.println("character "+str.charAt(i)+" count : "+count);
+			}
+		}
+	}
+	
+	
+	
+	public static void repeatchar(String str) {
+		
+		for(int i = 0;i<str.length();i++) {
+			
+			int count = 1;
+			for(int j=i+1;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j)) {
+					count++;
+				}
+			}
+			
+			if(count > 1) {
+				System.out.println("repeat char : "+ str.charAt(i) +" - "+count);
+			}
+		}
+	}
+	
+	
+	
+	
+	public static void removechar(String str,char ch) {
+		
+		String result = "";
+		for(int  i =0;i<str.length();i++) {
+			
+			if(str.charAt(i)!= ch) {
+				result += str.charAt(i);
+			}
+		}
+		
+		System.out.println("String after given char remove : "+result);
+	}
+	
+	
+	
+	public static void mostoccurchar(String str) {
+		
+		int max = 0;
+		char result = ' ';
+		for(int i=0;i<str.length();i++) {
+			
+			int count = 1;
+			for(int j = i+1;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j)) {
+					count++;
+				}
+			}
+			
+			if(max < count) {
+				max = count;
+				result = str.charAt(i);
+			}
+		}
+		
+		System.out.println("Most repeating char : "+ result);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		
+		//stringreverse(str);
+		
+//		firstnonrepeat(str);
+//		
+//		lastnonrepat(str);
+		
+		//removeduplicate(str);
+		
+		//eachcharoccur(str);
+		
+		//repeatchar(str);
+		
+		removechar(str,'g');
+	}
+	
+	
+
+}

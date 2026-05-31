@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class removegivencharacter {
+	
+	public static void removegivenchar(String str,char c) {
+		
+		String result ="";
+		for(int i=0;i<str.length();i++) {
+			
+			
+			if(str.charAt(i) != c) {
+				result += str.charAt(i);
+			}
+			
+		}
+		
+		System.out.println("Final String : "+result);
+	}
+
+	
+		public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter String");
+		String str = sc.nextLine();
+		System.out.println("Enter character to remove ");
+		char ch = sc.next().charAt(0);
+		removegivenchar(str,ch);
+	}
+}

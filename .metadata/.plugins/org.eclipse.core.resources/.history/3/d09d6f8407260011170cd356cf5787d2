@@ -1,0 +1,35 @@
+
+public class palindromeWordsfromSentence {
+	
+	
+	
+	public static void palindromewordsfromsentence(String str) {
+		
+		String[] arr = str.split(" ");
+		
+		int j = arr.length;
+		
+		for(String arr1 : arr) {
+			
+			
+		}
+ 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class SortString {
+	
+	
+	public static void SortStringASC(String str) {
+		
+		
+		char[] arr = new char[str.length()];
+		for(int i =0;i<str.length();i++) {
+			
+			arr[i] = str.charAt(i);
+			
+		}
+		
+		
+		for(int i =0;i<arr.length;i++) {
+			
+			for(int j =i+1;j<str.length();j++) {
+				
+				if(arr[i] > arr[j]) {
+					char temp = arr[i];
+					arr[i] = arr[j];
+					arr[j] = temp;
+				}
+			}
+		}
+		
+		for(char ch : arr) {
+			System.out.println(ch);
+		}
+		
+		int size = arr.length;
+		System.out.println("Second largest ::"+arr[(arr.length) - 2]);
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter String");
+		String str = sc.nextLine();
+		SortStringASC(str);
+	}
+
+}

@@ -1,0 +1,32 @@
+
+public class Removeduplicatecharacter {
+	
+	public static String removeduplicatecharacter(String str) {
+		
+		String result = "";
+		for(int i=0;i<str.length();i++) {
+			
+			int count = 0;
+			for(int j=i+1;j<str.length();j++) {
+				
+				if(str.charAt(i) == str.charAt(j) && i != j) {
+					
+					count++;
+				}
+			}
+			
+			if(count == 0) {
+				result += str.charAt(i);
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		return result;
+	}
+
+}

@@ -1,0 +1,15 @@
+
+public class SortString {
+	
+	
+	public static void SortStringASC(String str) {
+		
+		
+		char[] ch = new char(str.length());
+		for(int i =0;i<str.length();i++) {
+			
+			
+		}
+	}
+
+}

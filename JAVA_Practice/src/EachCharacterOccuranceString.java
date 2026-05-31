@@ -1,0 +1,72 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class EachCharacterOccuranceString {
+	
+	public static void EachCharacterOccurance(String str) {
+		
+		for(int i = 0;i<str.length();i++) {
+			
+			boolean repeated = false;
+			for(int k =0;k<i;k++) {
+				if(str.charAt(i) == str.charAt(k)) {
+					
+					repeated = true;
+					break;
+				}
+			}
+			
+			int count = 0;
+			if(repeated == false) {
+			if(str.charAt(i)!= ' ') {
+			for(int j =0;j<str.length();j++) {
+				                                                                           
+				if(str.charAt(i) == str.charAt(j)) {
+					count++;
+				}
+			}
+			}
+			
+			System.out.println(str.charAt(i) + " - "+count);
+			}                                              
+		}
+	}
+	
+	
+	
+	
+	public static void eachcharacteroccurencehashmap(String str) {
+		
+		HashMap<Character,Integer> map = new HashMap<>();
+		
+		for(int i=0;i<str.length();i++) {
+			
+			char ch = str.charAt(i);
+			
+			map.put(ch, map.getOrDefault(ch, 0)+1);
+		}
+		
+		for(char key : map.keySet()) {
+			System.out.println(key + "-"+map.get(key));
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("Enter String");
+		String str = sc.nextLine();
+		EachCharacterOccurance(str);
+		eachcharacteroccurencehashmap(str);
+//		String result = EachCharacterOccurance(str);
+//		System.out.println(result);
+	}
+
+}

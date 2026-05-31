@@ -1,0 +1,45 @@
+package com.pages;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import io.cucumber.java.After;
+import io.cucumber.java.Before;
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class BrowserSetup extends BasePage{
+	
+	public BrowserSetup(WebDriver driver) {
+		super(driver);
+		
+	}
+
+	WebDriver webdriver;
+	WebDriverWait wait;
+	
+	
+    public void setUp() throws InterruptedException {
+        // Setup WebDriver
+        WebDriverManager.edgedriver().setup();
+        webdriver = new EdgeDriver();
+        webdriver.manage().window().maximize();
+        webdriver.get("https://www.netmeds.com/");
+        System.out.println("https://www.netmeds.com/");
+        Thread.sleep(3000);
+        
+    }
+
+    // This will run after each scenario
+    
+    public void tearDown() {
+        // Quit the WebDriver session
+        if (webdriver != null) {
+            webdriver.quit();
+            System.out.println("Browser session ended.");
+        }
+    }
+
+
+}
