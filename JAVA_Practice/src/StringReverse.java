@@ -15,6 +15,7 @@ public class StringReverse {
 			
 		}
 		System.out.println();
+		System.out.println("By string builder");
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append(str);
