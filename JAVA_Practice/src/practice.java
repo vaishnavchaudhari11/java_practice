@@ -1,6 +1,8 @@
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class practice {
 	
@@ -354,6 +356,73 @@ public class practice {
 	
 	
 	
+	
+	public static void commonelementsin2arrays() {
+		
+		
+		int[] arr1 = {1,2,3};
+		int[] arr2 = {4,2,3,6};
+		
+		
+		for(int i=0;i<arr1.length;i++) {
+			
+			
+			boolean repeated = false;
+			
+			for(int j = 0;j<arr2.length;j++) {
+				
+				if(arr1[i] == arr2[j]) {
+					repeated = true;
+				}
+			}
+			
+			if(repeated) {
+				System.out.println(arr1[i]);
+			}
+		}
+		
+		System.out.println("-----------------");
+		
+		
+		Set<Integer> set = new HashSet<>();
+		
+		for(int i : arr1) {
+			set.add(i);
+		}
+		
+		for(int j : arr2) {
+			if(set.contains(j)) {
+				System.out.println(j);
+			}
+		}
+	} 
+	
+	
+	public static void rmdup() {
+		
+		int[] arr = {2,3,4,2,3,7,5,8};
+		
+		for(int i=0;i<arr.length;i++) {
+			
+			int count = 0;
+			for(int j=i+1;j<arr.length;j++) {
+				
+				if(arr[i] == arr[j]) {
+					
+					count++;
+//					break;
+				}
+			}
+			
+			if(count ==0) {
+				System.out.print(arr[i] + " ");
+			}
+		}
+	}
+	
+	
+	
+	
 	public static void main(String[] args) {
 		
 //		Scanner sc = new Scanner(System.in);
@@ -382,7 +451,9 @@ public class practice {
 		
 //		duplicatearr();
 //		sortarray();
-		duplicaterem("hello");
+//		duplicaterem("hello");
+//		commonelementsin2arrays();
+		rmdup();
 	}
 
 }
